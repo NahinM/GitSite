@@ -1,0 +1,36 @@
+<h1 class="text-center">2048 Game</h1>
+
+<div class="container position-relative" style="height: 600px;">
+    <div class=" position-absolute top-50 start-50 translate-middle">
+        <h2 class="text-center">Score: {{score}}</h2>
+        <div class="board">
+            @for (row of board; track $index) {
+                <div class="row">
+                    @for (cell of row; track $index) {
+                        @switch (cell) {
+                            @case (2) {<div class = "col cell color2">{{cell}}</div>}
+                            @case (4) {<div class = "col cell color4">{{cell}}</div>}
+                            @case (8) {<div class = "col cell color8">{{cell}}</div>}
+                            @case (16) {<div class = "col cell color16">{{cell}}</div>}
+                            @case (32) {<div class = "col cell color32">{{cell}}</div>}
+                            @case (64) {<div class = "col cell color64">{{cell}}</div>}
+                            @case (128) {<div class = "col cell color128">{{cell}}</div>}
+                            @case (256) {<div class = "col cell color256">{{cell}}</div>}
+                            @case (512) {<div class = "col cell color512">{{cell}}</div>}
+                            @case (1024) {<div class = "col cell color1024">{{cell}}</div>}
+                            @case (2048) {<div class = "col cell color2048">{{cell}}</div>}
+                            @default {<div class = "col cell"></div>}
+                        }
+                    }
+                </div>
+            }
+            @if(gameOver) {
+                <div class="position-absolute top-50 start-50 translate-middle text-center"
+                     style="background-color: white; padding: 20px; border: 1px solid green; width: 200px;">
+                    <h2 class="text-info">Game Over!</h2><br>
+                    <button class="btn btn-outline-primary" (click)="restart()">Restart</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

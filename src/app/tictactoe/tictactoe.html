@@ -1,0 +1,22 @@
+<div class="container position-relative" style="height: 600px;">
+    <h1 class="text-center">Tic Tac Toe</h1>
+    <div class="text-center position-absolute top-50 start-50 translate-middle">
+        <h1>Player:{{Player}}</h1>
+        @for (row of Rows; track $index; let rowIndex = $index) {
+            <div class="row" style="width: 180px;">
+                @for (col of Columns; track $index; let colIndex = $index) {
+                    <div class="col " style="font-size: 40px; width: 60px;height: 60px;border: 1px solid rgb(62, 82, 1);" (click)="makeMove(rowIndex * 3 + colIndex)">
+                        {{Board[rowIndex * 3 + colIndex]}}
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    @if(Winner!='') {
+        <div class="position-absolute top-50 start-50 translate-middle text-center"
+             style="background-color: white; padding: 20px; border: 1px solid green; width: 200px;">
+            <h3 class="text-info">{{Winner}}</h3><br>
+            <button class="btn btn-outline-primary" (click)="restart()">Restart</button>
+        </div>
+    }
+</div>

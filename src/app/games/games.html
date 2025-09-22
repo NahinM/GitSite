@@ -1,0 +1,16 @@
+<h1 class="text-center">Welcome to the Game Portal</h1>
+<div class="d-flex flex-wrap">
+    @for (game of allGames; track $index) {
+        <div class="p-2">
+
+            <div class="card" style="width: 18rem;height: 25rem;border: 1px solid rgb(2, 110, 0);">
+              <img src="assets\images\games\{{game.image}}" class="card-img-top" alt="..." height="210px" width="100px">
+              <div class="card-body">
+                <h5 class="card-title">{{game.name}}</h5>
+                <p class="card-text">{{game.description}}</p>
+                <a [routerLink]="game.link" class="btn btn-primary">Play</a>
+              </div>
+            </div>
+        </div>
+    }
+</div>
