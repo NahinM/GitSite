@@ -1,1 +1,0 @@
-import{Pa as n,Qa as m,Wa as s,wa as o}from"./chunk-6D6YVWDB.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-home"]],decls:2,vars:0,consts:[[1,"text-center"]],template:function(e,c){e&1&&(n(0,"h1",0),s(1,"Welcome to my website"),m())},encapsulation:2})};export{i as Home};
